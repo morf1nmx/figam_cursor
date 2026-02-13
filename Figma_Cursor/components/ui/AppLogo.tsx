@@ -6,7 +6,7 @@ const AppLogo: React.FC = () => {
   return (
     <View style={styles.container}>
       <View style={styles.iconWrapper}>
-        <Ionicons name="heart" size={36} color="#144c85" />
+        <Ionicons name="heart" size={36} color="#c52d39" />
       </View>
 
       <Text style={styles.title}>Pausa Digital</Text>

@@ -1,26 +1,53 @@
-// src/components/ui/SocialButton.tsx
-import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import React from "react";
+import { TouchableOpacity, Text, StyleSheet, View } from "react-native";
 
 type SocialButtonProps = {
-  provider: 'google';
+  provider: string;
   onPress: () => void;
 };
 
 const SocialButton: React.FC<SocialButtonProps> = ({ provider, onPress }) => {
-  if (provider === 'google') {
+  if (provider === "google") {
     return (
-      <TouchableOpacity
-        className="flex-row items-center justify-center border border-gray-300 rounded-xl h-14 bg-white"
-        activeOpacity={0.8}
-        onPress={onPress}
-      >
-        <Text className="text-2xl font-bold text-gray-700 mr-2">G</Text>
-        <Text className="text-base font-medium text-gray-800">Google</Text>
-      </TouchableOpacity>
+      <View style={styles.container}>
+        <TouchableOpacity style={styles.button} activeOpacity={0.8} onPress={onPress}>
+          <Text style={styles.icon}>G</Text>
+          <Text style={styles.text}>Google</Text>
+        </TouchableOpacity>
+      </View>
     );
   }
   return null;
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center", // centra vertical
+    alignItems: "center",     // centra horizontal
+  },
+  button: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 12,
+    height: 56,
+    paddingHorizontal: 20,
+    backgroundColor: "#fff",
+  },
+  icon: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#4a4a4a",
+    marginRight: 8,
+  },
+  text: {
+    fontSize: 16,
+    fontWeight: "500",
+    color: "#333",
+  },
+});
 
 export default SocialButton;

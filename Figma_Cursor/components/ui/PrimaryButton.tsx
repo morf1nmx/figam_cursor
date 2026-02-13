@@ -24,7 +24,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({ label, onPress }) => {
       }}
     >
       <LinearGradient
-        colors={['#0a0a24', '#151518']}
+        colors={['#232397', '#8b8ba3']}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 0 }}
         className="h-14 flex-row items-center justify-center rounded-xl"
@@ -33,7 +33,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({ label, onPress }) => {
         <Ionicons
           name="leaf-outline"
           size={20}
-          color="#fff"
+          color="#682727"
           style={{ marginLeft: 8 }}
         />
       </LinearGradient>
